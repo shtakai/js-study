@@ -2,7 +2,7 @@
 
 ## node-express
 
-- [ゼロからはじめるExpress + Node.jsを使ったアプリ開発 - Qiita](http://qiita.com/nkjm/items/723990c518acfee6e473)を参考に簡単なAPIサーバーを動かしてみた。
+- [ゼロからはじめるExpress + Node.jsを使ったアプリ開発 - Qiita](http://qiita.com/nkjm/items/723990c518acfee6e473)
 
 ## node-rest
 
