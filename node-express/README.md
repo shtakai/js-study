@@ -1,3 +1,0 @@
-# Node.js + Express sample
-
-Easy sample....
