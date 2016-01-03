@@ -11,3 +11,7 @@
 ## angular2-quickstart
 
 - [5 Min Quickstart - ts](https://angular.io/docs/ts/latest/quickstart.html)
+
+## angular2-tour-of-heroes
+
+- [Tutorial: Tour of Heroes - ts](https://angular.io/docs/ts/latest/tutorial/)
