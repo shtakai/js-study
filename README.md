@@ -28,3 +28,7 @@ node server.js
 ```
 
 - [Tutorial | React](https://facebook.github.io/react/docs/tutorial.html)
+
+## typescript-react
+
+- [Working with React and TypeScript](http://blog.wolksoftware.com/working-with-react-and-typescript)
