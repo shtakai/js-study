@@ -32,3 +32,54 @@ node server.js
 ## typescript-react
 
 - [Working with React and TypeScript](http://blog.wolksoftware.com/working-with-react-and-typescript)
+
+## react-hello-world
+
+- TypeScript
+- React
+
+package.json
+
+```
+{
+  "name": "react-my-first",
+  "version": "1.0.0",
+  "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
+  },
+  "license": "ISC",
+  "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  },
+  "devDependencies": {
+    "concurrently": "^1.0.0",
+    "lite-server": "^1.3.1",
+    "typescript": "^1.7.3"
+  }
+}
+```
+
+tsconfig.json
+
+```
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "jsx": "react"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
+```
