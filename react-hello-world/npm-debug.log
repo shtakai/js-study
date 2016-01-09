@@ -10,8 +10,8 @@
 6 silly lifecycle react-my-first@1.0.0~pretsc:w: no script for pretsc:w, continuing
 7 info lifecycle react-my-first@1.0.0~tsc:w: react-my-first@1.0.0
 8 verbose lifecycle react-my-first@1.0.0~tsc:w: unsafe-perm in lifecycle true
-9 verbose lifecycle react-my-first@1.0.0~tsc:w: PATH: /Users/moritanaoki/.nodebrew/node/v5.3.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/moritanaoki/Desktop/js-study/react-my-first/node_modules/.bin:/Users/moritanaoki/.nodebrew/node/v5.3.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/moritanaoki/Desktop/js-study/react-my-first/node_modules/.bin:/Users/moritanaoki/go/bin:/Users/moritanaoki/tools/bin:/Users/moritanaoki/.nodebrew/current/bin:/usr/local/heroku/bin:/Users/moritanaoki/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-10 verbose lifecycle react-my-first@1.0.0~tsc:w: CWD: /Users/moritanaoki/Desktop/js-study/react-my-first
+9 verbose lifecycle react-my-first@1.0.0~tsc:w: PATH: /Users/moritanaoki/.nodebrew/node/v5.3.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/moritanaoki/Desktop/js-study/react-hello-world/node_modules/.bin:/Users/moritanaoki/.nodebrew/node/v5.3.0/lib/node_modules/npm/bin/node-gyp-bin:/Users/moritanaoki/Desktop/js-study/react-hello-world/node_modules/.bin:/Users/moritanaoki/go/bin:/Users/moritanaoki/tools/bin:/Users/moritanaoki/.nodebrew/current/bin:/usr/local/heroku/bin:/Users/moritanaoki/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle react-my-first@1.0.0~tsc:w: CWD: /Users/moritanaoki/Desktop/js-study/react-hello-world
 11 silly lifecycle react-my-first@1.0.0~tsc:w: Args: [ '-c', 'tsc -w' ]
 12 silly lifecycle react-my-first@1.0.0~tsc:w: Returned: code: 1  signal: null
 13 info lifecycle react-my-first@1.0.0~tsc:w: Failed to exec tsc:w script
@@ -26,7 +26,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:818:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
 15 verbose pkgid react-my-first@1.0.0
-16 verbose cwd /Users/moritanaoki/Desktop/js-study/react-my-first
+16 verbose cwd /Users/moritanaoki/Desktop/js-study/react-hello-world
 17 error Darwin 15.2.0
 18 error argv "/Users/moritanaoki/.nodebrew/node/v5.3.0/bin/node" "/Users/moritanaoki/.nodebrew/current/bin/npm" "run" "tsc:w"
 19 error node v5.3.0

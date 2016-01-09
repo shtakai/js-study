@@ -8,7 +8,9 @@
     "experimentalDecorators": true,
     "removeComments": true,
     "noImplicitAny": false,
-    "jsx": "react"
+    "jsx": "react",
+    "rootDir": "src",
+    "outDir": "dist"
   },
   "exclude": [
     "node_modules"
