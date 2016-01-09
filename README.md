@@ -15,3 +15,16 @@
 ## angular2-tour-of-heroes
 
 - [Tutorial: Tour of Heroes - ts](https://angular.io/docs/ts/latest/tutorial/)
+
+## react-getting-started
+
+- [Getting Started | React](https://facebook.github.io/react/docs/getting-started.html)
+
+## react-tutorial
+
+```bash
+npm install
+node server.js
+```
+
+- [Tutorial | React](https://facebook.github.io/react/docs/tutorial.html)
