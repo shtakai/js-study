@@ -12,8 +12,12 @@ var app;
             function Comment() {
                 _super.apply(this, arguments);
             }
+            Comment.prototype.rawMarkup = function () {
+                var rawMarkup = marked(this.props.children.toString(), { sanitize: true });
+                return { __html: rawMarkup };
+            };
             Comment.prototype.render = function () {
-                return (React.createElement("div", {"className": "comment"}, React.createElement("h2", {"className": "commentAuthor"}, this.props.author), this.props.children));
+                return (React.createElement("div", {"className": "comment"}, React.createElement("h2", {"className": "commentAuthor"}, this.props.author), React.createElement("span", {"dangerouslySetInnerHTML": this.rawMarkup()})));
             };
             return Comment;
         })(React.Component);
