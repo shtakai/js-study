@@ -7,17 +7,17 @@ var app;
 (function (app) {
     var components;
     (function (components) {
-        var CommentBox = (function (_super) {
-            __extends(CommentBox, _super);
-            function CommentBox() {
+        var CommentForm = (function (_super) {
+            __extends(CommentForm, _super);
+            function CommentForm() {
                 _super.apply(this, arguments);
             }
-            CommentBox.prototype.render = function () {
-                return (React.createElement("div", {"className": "commentBox"}, React.createElement(components.CommentList, null), React.createElement(components.CommentForm, null)));
+            CommentForm.prototype.render = function () {
+                return (React.createElement("div", {"className": "commentForm"}, "Hello, world! I am a CommentForm."));
             };
-            return CommentBox;
+            return CommentForm;
         })(React.Component);
-        components.CommentBox = CommentBox;
+        components.CommentForm = CommentForm;
     })(components = app.components || (app.components = {}));
 })(app || (app = {}));
-//# sourceMappingURL=CommentBox.js.map
+//# sourceMappingURL=CommentForm.js.map

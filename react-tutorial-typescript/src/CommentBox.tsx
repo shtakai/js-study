@@ -7,7 +7,8 @@ namespace app.components {
     public render() {
       return (
         <div className="commentBox">
-        Hello, world! I am a CommentBox.
+          <CommentList />
+          <CommentForm />
         </div>
       )
     }
