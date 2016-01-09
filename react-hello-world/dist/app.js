@@ -10,6 +10,7 @@ var app;
         var App = (function (_super) {
             __extends(App, _super);
             function App() {
+                _super.call(this);
                 this.style = {
                     title: {
                         color: "#ddd",

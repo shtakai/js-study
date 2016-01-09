@@ -1,9 +1,8 @@
-/// <reference path="../typings/react/react-global.d.ts" />
-
 namespace app.components {
   export class App extends React.Component<any, any> {
     style: any;
     constructor() {
+      super()
       this.style = {
         title: {
           color: "#ddd",
