@@ -20,12 +20,12 @@ export default class CommentBox extends React.Component<ICommentBoxProps, IComme
     this.state = {data: data};
   }
 
-  loadCommentsFromServer(url: string) {
+  loadCommentsFromServer() {
     request
-    .get(url)
+    .get(this.props.url)
     .end((err, res) => {
       if (err) {
-        console.error(url);
+        console.error(this.props.url);
         throw err;
       }
       console.log(res.body)
@@ -34,8 +34,8 @@ export default class CommentBox extends React.Component<ICommentBoxProps, IComme
   }
 
   public componentDidMount() {
-    this.loadCommentsFromServer(this.props.url);
-    setInterval(() => this.loadCommentsFromServer(this.props.url), this.props.pollInterval);
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer.bind(this), this.props.pollInterval);
   }
 
   public render() {
