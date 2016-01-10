@@ -12,15 +12,11 @@ var App = (function (_super) {
         _super.apply(this, arguments);
     }
     App.prototype.render = function () {
-        return (React.createElement(CommentBox_1.default, {"data": data, "url": "http://localhost:3000/api/comments"}));
+        return (React.createElement(CommentBox_1.default, {"url": "http://localhost:3000/api/comments"}));
     };
     return App;
 })(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = App;
-var data = [
-    { id: 1, author: "Pete Hunt", text: "This is one comment" },
-    { id: 2, author: "Jordan Walke", text: "This is *another* comment" }
-];
 ReactDOM.render(React.createElement(App, null), document.getElementById('content'));
 //# sourceMappingURL=App.js.map

@@ -24,6 +24,14 @@ app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+var allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', 'null');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+};
+app.use(allowCrossDomain);
+
 app.get('/api/comments', function(req, res) {
   fs.readFile(COMMENTS_FILE, function(err, data) {
     if (err) {

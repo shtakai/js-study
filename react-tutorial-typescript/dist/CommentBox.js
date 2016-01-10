@@ -9,11 +9,15 @@ var CommentList_1 = require('./CommentList');
 var CommentForm_1 = require('./CommentForm');
 var CommentBox = (function (_super) {
     __extends(CommentBox, _super);
-    function CommentBox() {
-        _super.apply(this, arguments);
+    function CommentBox(props) {
+        _super.call(this, props);
+        var data = [{ id: 1, author: "a", text: "a" }];
+        this.state = { data: data };
+        this.props = props;
     }
     CommentBox.prototype.componentDidMount = function () {
         var _this = this;
+        console.log("didMount");
         request
             .get(this.props.url)
             .end(function (err, res) {
@@ -21,11 +25,12 @@ var CommentBox = (function (_super) {
                 console.error(_this.props.url);
                 throw err;
             }
+            console.log(res.body);
             _this.setState({ data: res.body });
         });
     };
     CommentBox.prototype.render = function () {
-        return (React.createElement("div", {"className": "commentBox"}, React.createElement(CommentList_1.default, {"data": this.props.data}), React.createElement(CommentForm_1.default, null)));
+        return (React.createElement("div", {"className": "commentBox"}, React.createElement(CommentList_1.default, {"data": this.state.data}), React.createElement(CommentForm_1.default, null)));
     };
     return CommentBox;
 })(React.Component);
