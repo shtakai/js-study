@@ -1,13 +1,15 @@
-namespace app.components {
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import CommentBox from "./CommentBox"
 
-  interface IAppProps {}
-  interface IAppState {}
-  export class App extends React.Component<IAppProps, IAppState> {
-    public render(){
-      return (
-        <CommentBox data={data}/>
-      )
-    }
+interface IAppProps {}
+interface IAppState {}
+
+export default class App extends React.Component<IAppProps, IAppState> {
+  public render(){
+    return (
+      <CommentBox data={data} url="/api/comments"/>
+    )
   }
 }
 
@@ -16,7 +18,6 @@ var data: [IComment] = [
   {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
 ];
 
-var App = app.components.App;
 ReactDOM.render(
   <App />,
   document.getElementById('content')

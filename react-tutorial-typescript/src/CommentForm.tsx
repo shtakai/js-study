@@ -1,15 +1,15 @@
-namespace app.components {
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 
-  interface ICommentFormProps {}
-  interface ICommentFormState {}
+interface ICommentFormProps {}
+interface ICommentFormState {}
 
-  export class CommentForm extends React.Component<ICommentFormProps, ICommentFormState> {
-    public render() {
-      return (
-        <div className="commentForm">
-          Hello, world! I am a CommentForm.
-        </div>
-      )
-    }
+export default class CommentForm extends React.Component<ICommentFormProps, ICommentFormState> {
+  public render() {
+    return (
+      <div className="commentForm">
+      Hello, world! I am a CommentForm.
+      </div>
+    )
   }
 }

@@ -1,24 +1,25 @@
-namespace app.components {
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
+import Comment from './Comment'
 
-  interface ICommentListProps {
-    data: [IComment]
-  }
-  interface ICommentListState {}
+interface ICommentListProps {
+  data: [IComment]
+}
+interface ICommentListState {}
 
-  export class CommentList extends React.Component<ICommentListProps, ICommentListState> {
-    public render() {
-      var commentNodes = this.props.data.map ((comment) => {
-        return (
-          <Comment author={comment.author} key={comment.id}>
-            {comment.text}
-          </Comment>
-        )
-      })
+export default class CommentList extends React.Component<ICommentListProps, ICommentListState> {
+  public render() {
+    var commentNodes = this.props.data.map ((comment) => {
       return (
-        <div className="commentList">
-          {commentNodes}
-        </div>
+        <Comment author={comment.author} key={comment.id}>
+        {comment.text}
+        </Comment>
       )
-    }
+    })
+    return (
+      <div className="commentList">
+      {commentNodes}
+      </div>
+    )
   }
 }
