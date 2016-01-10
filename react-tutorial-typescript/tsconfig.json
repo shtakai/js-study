@@ -10,7 +10,7 @@
     "noImplicitAny": false,
     "jsx": "react",
     "rootDir": "src",
-    "outDir": "dist"
+    "outDir": "js"
   },
   "exclude": [
     "node_modules"
