@@ -77,12 +77,17 @@ var CommentBox = (function (_super) {
     };
     CommentBox.prototype.handleCommentSubmit = function (comment) {
         var _this = this;
+        var comments = this.state.data;
+        comment.id = Date.now();
+        var newComments = comments.concat([comment]);
+        this.setState({ data: newComments });
         request
             .post(this.props.url)
             .send(comment)
             .end(function (err, res) {
             if (err) {
                 console.error(_this.props.url);
+                _this.setState({ data: comments });
                 throw err;
             }
             console.log(res.body);
