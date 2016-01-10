@@ -13,7 +13,7 @@ var app;
                 _super.apply(this, arguments);
             }
             CommentBox.prototype.render = function () {
-                return (React.createElement("div", {"className": "commentBox"}, React.createElement(components.CommentList, null), React.createElement(components.CommentForm, null)));
+                return (React.createElement("div", {"className": "commentBox"}, React.createElement(components.CommentList, {"data": this.props.data}), React.createElement(components.CommentForm, null)));
             };
             return CommentBox;
         })(React.Component);

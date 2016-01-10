@@ -13,6 +13,9 @@ var app;
                 _super.apply(this, arguments);
             }
             CommentList.prototype.render = function () {
+                var commentNodes = this.props.data.map(function (comment) {
+                    return (React.createElement(components.Comment, {"author": comment.author, "key": comment.id}, comment.text));
+                });
                 return (React.createElement("div", {"className": "commentList"}, React.createElement(components.Comment, {"author": "Pete Hunt"}, "This is one comment"), React.createElement(components.Comment, {"author": "Jordan Walke"}, "This is *another* comment")));
             };
             return CommentList;

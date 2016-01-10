@@ -13,13 +13,17 @@ var app;
                 _super.apply(this, arguments);
             }
             App.prototype.render = function () {
-                return (React.createElement(components.CommentBox, null));
+                return (React.createElement(components.CommentBox, {"data": data}));
             };
             return App;
         })(React.Component);
         components.App = App;
     })(components = app.components || (app.components = {}));
 })(app || (app = {}));
+var data = [
+    { id: 1, author: "Pete Hunt", text: "This is one comment" },
+    { id: 2, author: "Jordan Walke", text: "This is *another* comment" }
+];
 var App = app.components.App;
 ReactDOM.render(React.createElement(App, null), document.getElementById('content'));
 //# sourceMappingURL=App.js.map

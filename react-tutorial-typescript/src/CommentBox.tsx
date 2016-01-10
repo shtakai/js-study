@@ -1,13 +1,15 @@
 namespace app.components {
 
-  interface ICommentBoxProps {}
+  interface ICommentBoxProps {
+    data: [IComment]
+  }
   interface ICommentBoxState {}
 
   export class CommentBox extends React.Component<ICommentBoxProps, ICommentBoxState> {
     public render() {
       return (
         <div className="commentBox">
-          <CommentList />
+          <CommentList data={this.props.data}/>
           <CommentForm />
         </div>
       )
