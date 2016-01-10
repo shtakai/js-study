@@ -1,26 +1,26 @@
 # Node.js + Express sample
 
-## node-express
+## 0.node-express
 
 - [ゼロからはじめるExpress + Node.jsを使ったアプリ開発 - Qiita](http://qiita.com/nkjm/items/723990c518acfee6e473)
 
-## node-rest
+## 1.node-rest
 
 - [Node.js + Express 4.x + MongoDB(Mongoose)でRESTfulなjsonAPIサーバの作成を丁寧に解説する．+ テストクライアントを用いたAPIテストまで - Qiita](http://qiita.com/shopetan/items/58a62a366aac4f5faa20)
 
-## angular2-quickstart
+## 2.angular2-quickstart
 
 - [5 Min Quickstart - ts](https://angular.io/docs/ts/latest/quickstart.html)
 
-## angular2-tour-of-heroes
+## 3.angular2-tour-of-heroes
 
 - [Tutorial: Tour of Heroes - ts](https://angular.io/docs/ts/latest/tutorial/)
 
-## react-getting-started
+## 4.react-getting-started
 
 - [Getting Started | React](https://facebook.github.io/react/docs/getting-started.html)
 
-## react-tutorial
+## 5.react-tutorial
 
 ```bash
 npm install
@@ -29,11 +29,11 @@ node server.js
 
 - [Tutorial | React](https://facebook.github.io/react/docs/tutorial.html)
 
-## typescript-react
+## 6.typescript-react
 
 - [Working with React and TypeScript](http://blog.wolksoftware.com/working-with-react-and-typescript)
 
-## react-hello-world
+## 7.react-hello-world
 
 - TypeScript
 - React
@@ -84,6 +84,6 @@ tsconfig.json
 }
 ```
 
-## react-tutorial-typescript
+## 8.react-tutorial-typescript
 
 ~~superagentでやろうとしたけど、使えないところで止まってる...。~~ 一応チュートリアルは終えることができた...。ただ、やはり不慣れなせいでinterfaceの使い方も曖昧だし、`;`が付いていたりいなかったり、buildが手間だったりいろいろ問題がある。。。
