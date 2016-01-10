@@ -8,7 +8,7 @@ interface IAppState {}
 export default class App extends React.Component<IAppProps, IAppState> {
   public render(){
     return (
-      <CommentBox url="http://localhost:3000/api/comments"　/>
+      <CommentBox url="http://localhost:3000/api/comments" pollInterval={2000} />
     )
   }
 }

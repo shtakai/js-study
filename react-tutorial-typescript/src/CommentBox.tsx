@@ -7,9 +7,10 @@ import CommentForm from './CommentForm'
 
 interface ICommentBoxProps {
   url: string;
+  pollInterval: number;
 }
 interface ICommentBoxState {
-  data: any
+  data: any;
 }
 
 export default class CommentBox extends React.Component<ICommentBoxProps, ICommentBoxState> {
@@ -17,21 +18,24 @@ export default class CommentBox extends React.Component<ICommentBoxProps, IComme
     super(props);
     let data = [{id: 1, author: "a", text: "a"}]
     this.state = {data: data};
-    this.props = props
   }
 
-  public componentDidMount() {
-    console.log("didMount")
+  loadCommentsFromServer(url: string) {
     request
-    .get(this.props.url)
+    .get(url)
     .end((err, res) => {
       if (err) {
-        console.error(this.props.url);
+        console.error(url);
         throw err;
       }
       console.log(res.body)
       this.setState({data: res.body});
     });
+  }
+
+  public componentDidMount() {
+    this.loadCommentsFromServer(this.props.url);
+    setInterval(() => this.loadCommentsFromServer(this.props.url), this.props.pollInterval);
   }
 
   public render() {
