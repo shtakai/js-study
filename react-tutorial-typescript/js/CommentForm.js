@@ -23,6 +23,7 @@ var CommentForm = (function (_super) {
         if (!text || !author) {
             return;
         }
+        this.props.onCommentSubmit({ author: author, text: text });
         this.setState({ author: '', text: '' });
     };
     CommentForm.prototype.render = function () {

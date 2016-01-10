@@ -33,6 +33,11 @@ export default class CommentBox extends React.Component<ICommentBoxProps, IComme
     });
   }
 
+  handleCommentSubmit(comment) {
+    // TODO: submit to the server and refresh the list
+    console.log("submit")
+  }
+
   public componentDidMount() {
     this.loadCommentsFromServer();
     setInterval(this.loadCommentsFromServer.bind(this), this.props.pollInterval);
@@ -42,7 +47,7 @@ export default class CommentBox extends React.Component<ICommentBoxProps, IComme
     return (
       <div className="commentBox">
       <CommentList data={this.state.data} />
-      <CommentForm />
+      <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)} />
       </div>
     )
   }

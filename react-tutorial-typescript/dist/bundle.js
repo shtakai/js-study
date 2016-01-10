@@ -75,12 +75,15 @@ var CommentBox = (function (_super) {
             _this.setState({ data: res.body });
         });
     };
+    CommentBox.prototype.handleCommentSubmit = function (comment) {
+        console.log("submit");
+    };
     CommentBox.prototype.componentDidMount = function () {
         this.loadCommentsFromServer();
         setInterval(this.loadCommentsFromServer.bind(this), this.props.pollInterval);
     };
     CommentBox.prototype.render = function () {
-        return (React.createElement("div", {"className": "commentBox"}, React.createElement(CommentList_1.default, {"data": this.state.data}), React.createElement(CommentForm_1.default, null)));
+        return (React.createElement("div", {"className": "commentBox"}, React.createElement(CommentList_1.default, {"data": this.state.data}), React.createElement(CommentForm_1.default, {"onCommentSubmit": this.handleCommentSubmit.bind(this)})));
     };
     return CommentBox;
 })(React.Component);
@@ -113,6 +116,7 @@ var CommentForm = (function (_super) {
         if (!text || !author) {
             return;
         }
+        this.props.onCommentSubmit({ author: author, text: text });
         this.setState({ author: '', text: '' });
     };
     CommentForm.prototype.render = function () {

@@ -1,7 +1,9 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 
-interface ICommentFormProps {}
+interface ICommentFormProps {
+  onCommentSubmit({author, text})
+}
 interface ICommentFormState {
   author: string;
   text: string;
@@ -28,7 +30,7 @@ export default class CommentForm extends React.Component<ICommentFormProps, ICom
     if (!text || !author) {
       return;
     }
-    // TODO: send request to the server
+    this.props.onCommentSubmit({author: author, text: text});
     this.setState({author: '', text: ''});
   }
 
