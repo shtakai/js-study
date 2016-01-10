@@ -1,5 +1,6 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
+import {IComment} from "./interfaces";
 import Comment from './Comment'
 
 interface ICommentListProps {
