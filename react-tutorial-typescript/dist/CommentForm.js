@@ -13,10 +13,10 @@ var app;
                 _super.apply(this, arguments);
             }
             CommentForm.prototype.render = function () {
-                return (React.createElement("div", {"className": "commentForm"}, "Hello, world! I am a CommentForm."));
+                return (React.createElement("div", {className: "commentForm"}, "Hello, world! I am a CommentForm."));
             };
             return CommentForm;
-        })(React.Component);
+        }(React.Component));
         components.CommentForm = CommentForm;
     })(components = app.components || (app.components = {}));
 })(app || (app = {}));

@@ -12,11 +12,23 @@ var app;
             function CommentBox() {
                 _super.apply(this, arguments);
             }
+            CommentBox.prototype.componentDidMount = function () {
+                var _this = this;
+                request
+                    .get(this.props.url)
+                    .end(function (err, res) {
+                    if (err) {
+                        console.error(_this.props.url);
+                        throw err;
+                    }
+                    _this.setState({ data: res.body });
+                });
+            };
             CommentBox.prototype.render = function () {
-                return (React.createElement("div", {"className": "commentBox"}, React.createElement(components.CommentList, {"data": this.props.data}), React.createElement(components.CommentForm, null)));
+                return (React.createElement("div", {className: "commentBox"}, React.createElement(components.CommentList, {data: this.props.data}), React.createElement(components.CommentForm, null)));
             };
             return CommentBox;
-        })(React.Component);
+        }(React.Component));
         components.CommentBox = CommentBox;
     })(components = app.components || (app.components = {}));
 })(app || (app = {}));

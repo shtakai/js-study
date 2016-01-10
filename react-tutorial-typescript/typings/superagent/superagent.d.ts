@@ -113,4 +113,3 @@ declare module "superagent" {
 
   export = request;
 }
-
