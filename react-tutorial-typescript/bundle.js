@@ -92,7 +92,6 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],2:[function(require,module,exports){
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -107,10 +106,10 @@ var App = (function (_super) {
         _super.apply(this, arguments);
     }
     App.prototype.render = function () {
-        return (React.createElement(CommentBox_1.default, {data: data, url: "/api/comments"}));
+        return (React.createElement(CommentBox_1.default, {"data": data, "url": "http://localhost:3000/api/comments"}));
     };
     return App;
-}(React.Component));
+})(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = App;
 var data = [
@@ -120,7 +119,6 @@ var data = [
 ReactDOM.render(React.createElement(App, null), document.getElementById('content'));
 
 },{"./CommentBox":4,"react":164,"react-dom":35}],3:[function(require,module,exports){
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -137,15 +135,14 @@ var Comment = (function (_super) {
         return { __html: rawMarkup };
     };
     Comment.prototype.render = function () {
-        return (React.createElement("div", {className: "comment"}, React.createElement("h2", {className: "commentAuthor"}, this.props.author), React.createElement("span", {dangerouslySetInnerHTML: this.rawMarkup()})));
+        return (React.createElement("div", {"className": "comment"}, React.createElement("h2", {"className": "commentAuthor"}, this.props.author), React.createElement("span", {"dangerouslySetInnerHTML": this.rawMarkup()})));
     };
     return Comment;
-}(React.Component));
+})(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Comment;
 
 },{"react":164}],4:[function(require,module,exports){
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -173,15 +170,14 @@ var CommentBox = (function (_super) {
         });
     };
     CommentBox.prototype.render = function () {
-        return (React.createElement("div", {className: "commentBox"}, React.createElement(CommentList_1.default, {data: this.props.data}), React.createElement(CommentForm_1.default, null)));
+        return (React.createElement("div", {"className": "commentBox"}, React.createElement(CommentList_1.default, {"data": this.props.data}), React.createElement(CommentForm_1.default, null)));
     };
     return CommentBox;
-}(React.Component));
+})(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = CommentBox;
 
 },{"./CommentForm":5,"./CommentList":6,"react":164,"superagent":166}],5:[function(require,module,exports){
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -194,15 +190,14 @@ var CommentForm = (function (_super) {
         _super.apply(this, arguments);
     }
     CommentForm.prototype.render = function () {
-        return (React.createElement("div", {className: "commentForm"}, "Hello, world! I am a CommentForm."));
+        return (React.createElement("div", {"className": "commentForm"}, "Hello, world! I am a CommentForm."));
     };
     return CommentForm;
-}(React.Component));
+})(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = CommentForm;
 
 },{"react":164}],6:[function(require,module,exports){
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -217,12 +212,12 @@ var CommentList = (function (_super) {
     }
     CommentList.prototype.render = function () {
         var commentNodes = this.props.data.map(function (comment) {
-            return (React.createElement(Comment_1.default, {author: comment.author, key: comment.id}, comment.text));
+            return (React.createElement(Comment_1.default, {"author": comment.author, "key": comment.id}, comment.text));
         });
-        return (React.createElement("div", {className: "commentList"}, commentNodes));
+        return (React.createElement("div", {"className": "commentList"}, commentNodes));
     };
     return CommentList;
-}(React.Component));
+})(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = CommentList;
 

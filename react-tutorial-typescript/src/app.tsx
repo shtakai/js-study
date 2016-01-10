@@ -8,7 +8,7 @@ interface IAppState {}
 export default class App extends React.Component<IAppProps, IAppState> {
   public render(){
     return (
-      <CommentBox data={data} url="/api/comments"/>
+      <CommentBox data={data} url="http://localhost:3000/api/comments"　/>
     )
   }
 }

@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -11,10 +10,10 @@ var CommentForm = (function (_super) {
         _super.apply(this, arguments);
     }
     CommentForm.prototype.render = function () {
-        return (React.createElement("div", {className: "commentForm"}, "Hello, world! I am a CommentForm."));
+        return (React.createElement("div", {"className": "commentForm"}, "Hello, world! I am a CommentForm."));
     };
     return CommentForm;
-}(React.Component));
+})(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = CommentForm;
 //# sourceMappingURL=CommentForm.js.map

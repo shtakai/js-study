@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -13,12 +12,12 @@ var CommentList = (function (_super) {
     }
     CommentList.prototype.render = function () {
         var commentNodes = this.props.data.map(function (comment) {
-            return (React.createElement(Comment_1.default, {author: comment.author, key: comment.id}, comment.text));
+            return (React.createElement(Comment_1.default, {"author": comment.author, "key": comment.id}, comment.text));
         });
-        return (React.createElement("div", {className: "commentList"}, commentNodes));
+        return (React.createElement("div", {"className": "commentList"}, commentNodes));
     };
     return CommentList;
-}(React.Component));
+})(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = CommentList;
 //# sourceMappingURL=CommentList.js.map

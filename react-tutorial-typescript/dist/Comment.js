@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
@@ -15,10 +14,10 @@ var Comment = (function (_super) {
         return { __html: rawMarkup };
     };
     Comment.prototype.render = function () {
-        return (React.createElement("div", {className: "comment"}, React.createElement("h2", {className: "commentAuthor"}, this.props.author), React.createElement("span", {dangerouslySetInnerHTML: this.rawMarkup()})));
+        return (React.createElement("div", {"className": "comment"}, React.createElement("h2", {"className": "commentAuthor"}, this.props.author), React.createElement("span", {"dangerouslySetInnerHTML": this.rawMarkup()})));
     };
     return Comment;
-}(React.Component));
+})(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = Comment;
 //# sourceMappingURL=Comment.js.map
