@@ -4,11 +4,10 @@ import {IComment} from "./interfaces";
 import Comment from './Comment'
 
 interface ICommentListProps {
-  data: [IComment]
+  data: IComment[]
 }
-interface ICommentListState {}
 
-export default class CommentList extends React.Component<ICommentListProps, ICommentListState> {
+export default class CommentList extends React.Component<ICommentListProps, any> {
   public render() {
     var commentNodes = this.props.data.map ((comment) => {
       return (

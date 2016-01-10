@@ -4,9 +4,8 @@ import * as ReactDOM from 'react-dom'
 interface ICommentProps extends React.Props<any> {
   author: string
 }
-interface ICommentState {}
 
-export default class Comment extends React.Component<ICommentProps, ICommentState> {
+export default class Comment extends React.Component<ICommentProps, any> {
   public rawMarkup() {
     var rawMarkup = marked(this.props.children.toString(), {sanitize: true})
     return { __html: rawMarkup }

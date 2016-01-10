@@ -19,7 +19,7 @@ var App = (function (_super) {
 })(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = App;
-ReactDOM.render(React.createElement(App, null), document.getElementById('content'));
+ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
 
 },{"./CommentBox":3,"react":164,"react-dom":35}],2:[function(require,module,exports){
 var __extends = (this && this.__extends) || function (d, b) {
@@ -59,8 +59,7 @@ var CommentBox = (function (_super) {
     __extends(CommentBox, _super);
     function CommentBox(props) {
         _super.call(this, props);
-        var data = [{ id: 1, author: "a", text: "a" }];
-        this.state = { data: data };
+        this.state = { data: [] };
     }
     CommentBox.prototype.loadCommentsFromServer = function () {
         var _this = this;

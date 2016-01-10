@@ -9,15 +9,15 @@ interface ICommentBoxProps {
   url: string;
   pollInterval: number;
 }
+
 interface ICommentBoxState {
-  data: any;
+  data: IComment[];
 }
 
 export default class CommentBox extends React.Component<ICommentBoxProps, ICommentBoxState> {
   constructor(props : ICommentBoxProps) {
     super(props);
-    let data = [{id: 1, author: "a", text: "a"}]
-    this.state = {data: data};
+    this.state = {data: []}
   }
 
   loadCommentsFromServer() {

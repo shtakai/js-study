@@ -11,8 +11,7 @@ var CommentBox = (function (_super) {
     __extends(CommentBox, _super);
     function CommentBox(props) {
         _super.call(this, props);
-        var data = [{ id: 1, author: "a", text: "a" }];
-        this.state = { data: data };
+        this.state = { data: [] };
     }
     CommentBox.prototype.loadCommentsFromServer = function () {
         var _this = this;

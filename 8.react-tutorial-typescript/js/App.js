@@ -18,5 +18,5 @@ var App = (function (_super) {
 })(React.Component);
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.default = App;
-ReactDOM.render(React.createElement(App, null), document.getElementById('content'));
+ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
 //# sourceMappingURL=App.js.map
