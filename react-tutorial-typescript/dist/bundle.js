@@ -76,6 +76,18 @@ var CommentBox = (function (_super) {
         });
     };
     CommentBox.prototype.handleCommentSubmit = function (comment) {
+        var _this = this;
+        request
+            .post(this.props.url)
+            .send(comment)
+            .end(function (err, res) {
+            if (err) {
+                console.error(_this.props.url);
+                throw err;
+            }
+            console.log(res.body);
+            _this.setState({ data: res.body });
+        });
         console.log("submit");
     };
     CommentBox.prototype.componentDidMount = function () {

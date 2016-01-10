@@ -34,7 +34,17 @@ export default class CommentBox extends React.Component<ICommentBoxProps, IComme
   }
 
   handleCommentSubmit(comment) {
-    // TODO: submit to the server and refresh the list
+    request
+    .post(this.props.url)
+    .send(comment)
+    .end((err, res) => {
+      if (err) {
+        console.error(this.props.url);
+        throw err;
+      }
+      console.log(res.body)
+      this.setState({data: res.body});
+    });
     console.log("submit")
   }
 
