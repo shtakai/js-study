@@ -21,26 +21,34 @@ export default class CommentForm extends React.Component<ICommentFormProps, ICom
     this.setState({author:this.state.author, text: e.target.value as string})
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    var author = this.state.author.trim();
+    var text = this.state.text.trim();
+    if (!text || !author) {
+      return;
+    }
+    // TODO: send request to the server
+    this.setState({author: '', text: ''});
+  }
+
   public render() {
-    let self = this
     return (
-      <div className="commentForm">
-        <form className="commentForm">
-          <input
+      <form className="commentForm" onSubmit={this.handleSubmit.bind(this)}>
+        <input
+        type="text"
+        placeholder="Your name"
+        value={this.state.author}
+        onChange={this.handleAuthorChange.bind(this)}
+        />
+        <input
           type="text"
-          placeholder="Your name"
-          value={this.state.author}
-          onChange={this.handleAuthorChange.bind(this)}
-          />
-          <input
-            type="text"
-            placeholder="Say something..."
-            value={this.state.text}
-            onChange={this.handleTextChange.bind(this)}
-          />
-          <input type="submit" value="Post" />
-        </form>
-      </div>
+          placeholder="Say something..."
+          value={this.state.text}
+          onChange={this.handleTextChange.bind(this)}
+        />
+        <input type="submit" value="Post" />
+      </form>
     )
   }
 }
