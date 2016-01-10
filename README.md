@@ -87,3 +87,13 @@ tsconfig.json
 ## 8.react-tutorial-typescript
 
 ~~superagentでやろうとしたけど、使えないところで止まってる...。~~ 一応チュートリアルは終えることができた...。ただ、やはり不慣れなせいでinterfaceの使い方も曖昧だし、`;`が付いていたりいなかったり、buildが手間だったりいろいろ問題がある。。。
+
+- [Browserify](http://browserify.org/)
+- [superagent](https://github.com/visionmedia/superagent)
+
+が良かった。`setInterval(cb, time)`に、`bind(this)`をつけてなくてハマった。
+
+- [hushin/react-tutorial-typescript](https://github.com/hushin/react-tutorial-typescript)
+- [Visual Studio上のTypeScript JSXを使ってReact.js「ReactのチュートリアルをTypeScriptでリライト」 - かずきのBlog@hatena](http://blog.okazuki.jp/entry/2015/12/27/004450)
+
+が参考になった。
