@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import CommentList from "./CommentList";
 import CommentForm from "./CommentForm";
 
@@ -14,8 +13,3 @@ export default class CommentBox extends React.Component {
     );
   }
 }
-
-ReactDOM.render(
-  <CommentBox />,
-  document.getElementById("content")
-);
