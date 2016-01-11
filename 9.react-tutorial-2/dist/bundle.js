@@ -21192,20 +21192,58 @@
 	var CommentForm = function (_React$Component) {
 	  _inherits(CommentForm, _React$Component);
 
-	  function CommentForm() {
+	  function CommentForm(props) {
 	    _classCallCheck(this, CommentForm);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CommentForm).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(CommentForm).call(this, props));
+
+	    _this.state = {
+	      author: "",
+	      text: ""
+	    };
+	    return _this;
 	  }
 
 	  _createClass(CommentForm, [{
+	    key: "handleAuthorChange",
+	    value: function handleAuthorChange(e) {
+	      this.setState({ author: e.target.value });
+	    }
+	  }, {
+	    key: "handleTextChange",
+	    value: function handleTextChange(e) {
+	      this.setState({ text: e.target.value });
+	    }
+	  }, {
+	    key: "handleSubmit",
+	    value: function handleSubmit(e) {
+	      e.preventDefault();
+	      var author = this.state.author.trim();
+	      var text = this.state.text.trim();
+	      if (!text || !author) {
+	        return;
+	      }
+
+	      this.setState({ author: "", text: "" });
+	    }
+	  }, {
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
 	        "form",
-	        { className: "commentForm" },
-	        _react2.default.createElement("input", { type: "text", placeholder: "Your name" }),
-	        _react2.default.createElement("input", { type: "text", placeholder: "Say something..." }),
+	        { className: "commentForm", onSubmit: this.handleSubmit.bind(this) },
+	        _react2.default.createElement("input", {
+	          type: "text",
+	          placeholder: "Your name",
+	          value: this.state.author,
+	          onChange: this.handleAuthorChange.bind(this)
+	        }),
+	        _react2.default.createElement("input", {
+	          type: "text",
+	          placeholder: "Say something...",
+	          value: this.state.text,
+	          onChange: this.handleTextChange.bind(this)
+	        }),
 	        _react2.default.createElement("input", { type: "submit", value: "Post" })
 	      );
 	    }
