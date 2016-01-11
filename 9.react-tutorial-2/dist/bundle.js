@@ -60,9 +60,7 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var data = [{ id: 1, author: "Pete Hunt", text: "This is one comment" }, { id: 2, author: "Jordan Walke", text: "This is *another* comment" }];
-
-	_reactDom2.default.render(_react2.default.createElement(_CommentBox2.default, { url: "http://localhost:3001/api/comments" }), document.getElementById("app"));
+	_reactDom2.default.render(_react2.default.createElement(_CommentBox2.default, { url: "http://localhost:3001/api/comments", pollInterval: 2000 }), document.getElementById("app"));
 
 /***/ },
 /* 1 */
@@ -19710,16 +19708,23 @@
 	  }
 
 	  _createClass(CommentBox, [{
-	    key: "componentDidMount",
-	    value: function componentDidMount() {
+	    key: "loadCommentsFromServer",
+	    value: function loadCommentsFromServer() {
 	      var _this2 = this;
 
 	      _superagent2.default.get(this.props.url).end(function (err, res) {
 	        if (err) {
 	          throw err;
 	        }
+	        console.log("data: " + res.body);
 	        _this2.setState({ data: res.body });
 	      });
+	    }
+	  }, {
+	    key: "componentDidMount",
+	    value: function componentDidMount() {
+	      this.loadCommentsFromServer();
+	      setInterval(this.loadCommentsFromServer.bind(this), this.props.pollInterval);
 	    }
 	  }, {
 	    key: "render",
@@ -21197,9 +21202,11 @@
 	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        "div",
+	        "form",
 	        { className: "commentForm" },
-	        "Hello, world! I am a CommentForm."
+	        _react2.default.createElement("input", { type: "text", placeholder: "Your name" }),
+	        _react2.default.createElement("input", { type: "text", placeholder: "Say something..." }),
+	        _react2.default.createElement("input", { type: "submit", value: "Post" })
 	      );
 	    }
 	  }]);

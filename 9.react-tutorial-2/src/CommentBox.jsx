@@ -11,15 +11,21 @@ export default class CommentBox extends React.Component {
     };
   }
 
-  componentDidMount() {
+  loadCommentsFromServer() {
     request
       .get(this.props.url)
       .end((err, res) => {
         if (err) {
           throw err;
         }
+        console.log(`data: ${res.body}`);
         this.setState({data: res.body});
       });
+  }
+
+  componentDidMount() {
+    this.loadCommentsFromServer();
+    setInterval(this.loadCommentsFromServer.bind(this), this.props.pollInterval);
   }
 
   render() {
