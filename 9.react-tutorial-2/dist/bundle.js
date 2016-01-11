@@ -19716,7 +19716,6 @@
 	        if (err) {
 	          throw err;
 	        }
-	        console.log("data: " + res.body);
 	        _this2.setState({ data: res.body });
 	      });
 	    }
@@ -19731,14 +19730,11 @@
 	      this.setState({ data: newComments });
 	      _superagent2.default.post(this.props.url).send(comment).end(function (err, res) {
 	        if (err) {
-	          console.error(_this3.props.url);
 	          _this3.setState({ data: comments });
 	          throw err;
 	        }
-	        console.log(res.body);
 	        _this3.setState({ data: res.body });
 	      });
-	      console.log("submit");
 	    }
 	  }, {
 	    key: "componentDidMount",

@@ -18,7 +18,6 @@ export default class CommentBox extends React.Component {
         if (err) {
           throw err;
         }
-        console.log(`data: ${res.body}`);
         this.setState({data: res.body});
       });
   }
@@ -33,14 +32,11 @@ export default class CommentBox extends React.Component {
       .send(comment)
       .end((err, res) => {
         if (err) {
-          console.error(this.props.url);
           this.setState({data: comments});
           throw err;
         }
-        console.log(res.body);
         this.setState({data: res.body});
       });
-    console.log("submit");
   }
 
   componentDidMount() {
