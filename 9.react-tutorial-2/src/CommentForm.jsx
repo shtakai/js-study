@@ -25,6 +25,7 @@ export default class CommentForm extends React.Component {
       return;
     }
 
+    this.props.onCommentSubmit({author: author, text: text});
     this.setState({author: "", text: ""});
   }
 

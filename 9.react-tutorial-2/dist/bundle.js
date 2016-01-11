@@ -19721,6 +19721,26 @@
 	      });
 	    }
 	  }, {
+	    key: "handleCommentSubmit",
+	    value: function handleCommentSubmit(comment) {
+	      var _this3 = this;
+
+	      var comments = this.state.data;
+	      comment.id = Date.now();
+	      var newComments = comments.concat([comment]);
+	      this.setState({ data: newComments });
+	      _superagent2.default.post(this.props.url).send(comment).end(function (err, res) {
+	        if (err) {
+	          console.error(_this3.props.url);
+	          _this3.setState({ data: comments });
+	          throw err;
+	        }
+	        console.log(res.body);
+	        _this3.setState({ data: res.body });
+	      });
+	      console.log("submit");
+	    }
+	  }, {
 	    key: "componentDidMount",
 	    value: function componentDidMount() {
 	      this.loadCommentsFromServer();
@@ -19738,7 +19758,7 @@
 	          "Comments"
 	        ),
 	        _react2.default.createElement(_CommentList2.default, { data: this.state.data }),
-	        _react2.default.createElement(_CommentForm2.default, null)
+	        _react2.default.createElement(_CommentForm2.default, { onCommentSubmit: this.handleCommentSubmit.bind(this) })
 	      );
 	    }
 	  }]);
@@ -21224,6 +21244,7 @@
 	        return;
 	      }
 
+	      this.props.onCommentSubmit({ author: author, text: text });
 	      this.setState({ author: "", text: "" });
 	    }
 	  }, {

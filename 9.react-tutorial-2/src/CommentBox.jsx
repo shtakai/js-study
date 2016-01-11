@@ -23,6 +23,26 @@ export default class CommentBox extends React.Component {
       });
   }
 
+  handleCommentSubmit(comment) {
+    var comments = this.state.data;
+    comment.id = Date.now();
+    var newComments = comments.concat([comment]);
+    this.setState({data: newComments});
+    request
+      .post(this.props.url)
+      .send(comment)
+      .end((err, res) => {
+        if (err) {
+          console.error(this.props.url);
+          this.setState({data: comments});
+          throw err;
+        }
+        console.log(res.body);
+        this.setState({data: res.body});
+      });
+    console.log("submit");
+  }
+
   componentDidMount() {
     this.loadCommentsFromServer();
     setInterval(this.loadCommentsFromServer.bind(this), this.props.pollInterval);
@@ -33,7 +53,7 @@ export default class CommentBox extends React.Component {
       <div className="commentBox">
         <h1>Comments</h1>
         <CommentList data={this.state.data}/>
-        <CommentForm />
+        <CommentForm onCommentSubmit={this.handleCommentSubmit.bind(this)} />
       </div>
     );
   }
