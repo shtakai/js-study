@@ -97,3 +97,13 @@ tsconfig.json
 - [Visual Studio上のTypeScript JSXを使ってReact.js「ReactのチュートリアルをTypeScriptでリライト」 - かずきのBlog@hatena](http://blog.okazuki.jp/entry/2015/12/27/004450)
 
 が参考になった。
+
+## 9.react-tutorial-2
+
+- Babel ES6(ES2015)
+- webpack
+- ESLint
+- lite-server
+- Airbnb style guide
+
+[Reactのチュートリアルをもう一回やってみた（ESLint & Webpack） – Morizotter Blog](http://blog.morizotter.com/2016/01/12/react-tutorial-again-with-web-pack/)
