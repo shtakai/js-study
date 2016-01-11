@@ -60,7 +60,9 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	_reactDom2.default.render(_react2.default.createElement(_CommentBox2.default, null), document.getElementById("content"));
+	var data = [{ id: 1, author: "Pete Hunt", text: "This is one comment" }, { id: 2, author: "Jordan Walke", text: "This is *another* comment" }];
+
+	_reactDom2.default.render(_react2.default.createElement(_CommentBox2.default, { data: data }), document.getElementById("app"));
 
 /***/ },
 /* 1 */
@@ -19692,10 +19694,10 @@
 	var CommentBox = function (_React$Component) {
 	  _inherits(CommentBox, _React$Component);
 
-	  function CommentBox() {
+	  function CommentBox(props) {
 	    _classCallCheck(this, CommentBox);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CommentBox).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CommentBox).call(this, props));
 	  }
 
 	  _createClass(CommentBox, [{
@@ -19709,7 +19711,7 @@
 	          null,
 	          "Comments"
 	        ),
-	        _react2.default.createElement(_CommentList2.default, null),
+	        _react2.default.createElement(_CommentList2.default, { data: this.props.data }),
 	        _react2.default.createElement(_CommentForm2.default, null)
 	      );
 	    }
@@ -19751,28 +19753,27 @@
 	var CommentList = function (_React$Component) {
 	  _inherits(CommentList, _React$Component);
 
-	  function CommentList() {
+	  function CommentList(props) {
 	    _classCallCheck(this, CommentList);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CommentList).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CommentList).call(this, props));
 	  }
 
 	  _createClass(CommentList, [{
 	    key: "render",
 	    value: function render() {
+	      var commentNodes = this.props.data.map(function (comment) {
+	        return _react2.default.createElement(
+	          _Comment2.default,
+	          { author: comment.author, key: comment.id },
+	          comment.text
+	        );
+	      });
+
 	      return _react2.default.createElement(
 	        "div",
 	        { className: "commentList" },
-	        _react2.default.createElement(
-	          _Comment2.default,
-	          { author: "Pete Hunt" },
-	          "This is one comment"
-	        ),
-	        _react2.default.createElement(
-	          _Comment2.default,
-	          { author: "Jordan Walke" },
-	          "This is *another* comment"
-	        )
+	        commentNodes
 	      );
 	    }
 	  }]);
