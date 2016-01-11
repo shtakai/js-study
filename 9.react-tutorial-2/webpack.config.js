@@ -1,6 +1,5 @@
 module.exports = {
-  context: __dirname + '/src',
-  entry: "./app",
+  entry: __dirname + "/src/CommentBox.jsx",
   output: {
     path: __dirname + '/dist',
     filename: 'bundle.js'
@@ -8,7 +7,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: /\.jsx$/,
         exclude: /node_modules/,
         loader: "babel",
         query:{
@@ -16,5 +15,8 @@ module.exports = {
         }
       }
     ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
   }
 };
