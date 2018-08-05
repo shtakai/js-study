@@ -1,5 +1,7 @@
 # Node.js + Express sample
 
+[![GuardRails badge](https://badges.production.guardrails.io/shtakai/js-study.svg)](https://www.guardrails.io)
+
 ## 0.node-express
 
 - [ゼロからはじめるExpress + Node.jsを使ったアプリ開発 - Qiita](http://qiita.com/nkjm/items/723990c518acfee6e473)
